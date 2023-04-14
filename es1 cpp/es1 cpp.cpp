@@ -79,7 +79,7 @@ int main()
 				getline(cin, sric);
 				//cin.ignore(INT_MAX, '\n'); // quando c'era cin >> sric   senza cin.ignore, se scrivesse a a a attiverebbe 3 volte il catch
 				//cin.ignore(INT_MAX, ' '); //test
-				ric = stoi(sric); // se scrivo "1a"  mi prende 1
+				ric = stoi(sric); // se scrivo "1 a" o "1a"  mi prende 1
 				if (ric < 1 || ric > 10 || to_string(ric) != sric)
 					throw "";
 				//throw sric;
