@@ -40,7 +40,7 @@ int main()
 
 	string path = get_current_dir();
 	cout << path << endl;
-	path = path.erase(path.length() - 3) + "pasticceria"; // es1 3 char
+	path = path.erase(path.length() - 7) + "pasticceria"; // es1 3 char
 	//cout << path << endl;
 	//_getch(); // Console readkey true
 	HANDLE console; //#include <windows.h>
