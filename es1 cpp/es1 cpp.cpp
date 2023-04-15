@@ -36,13 +36,13 @@ std::string get_current_dir()
 int main()
 {
 	//non va, buh
-	SetConsoleOutputCP(GetACP()); // GetACP() returns the system codepage.
+	//SetConsoleOutputCP(GetACP()); // GetACP() returns the system codepage.
 
 	string path = get_current_dir();
 	cout << path << endl;
-	path = path.erase(path.length() - 7) + "pasticceria"; // es1 3 char
-	//cout << path << endl;
-	//_getch(); // Console readkey true
+	path = path.erase(path.length() - 7) + "pasticceria"; // es1 cpp 7 char
+	cout << path << endl;
+	_getch(); // Console readkey true
 	HANDLE console; //#include <windows.h>
 	console = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(console, 240); //nero su bianco
@@ -168,7 +168,7 @@ int main()
 
 		for (int i = 1; i < 100; i++)
 			lista[0] |= lista[i];
-
+		
 		//spesa
 
 		system("CLS"); // pulisce la console

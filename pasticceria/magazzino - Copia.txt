@@ -1,0 +1,10 @@
+questo è l'attuale magazzino della pasticceria
+ingrediente 1 g 200
+ingrediente 2 g 200
+zucchero g 1000
+farina g 1000
+strutto g 200
+cacao in polvere g 200
+ingrediente 5 g 200
+ingrediente 6 n 12
+ingrediente 7 ml 200
