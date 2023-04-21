@@ -1,0 +1,67 @@
+Aceto di vino bianco g 10
+Acqua ml 320
+Acqua di fiori d'arancio ml 15
+Amarene sciroppate n 15
+Arancia candita g 50
+Baccello di vaniglia n 2
+Burro g 250
+Burro morbido ma ancora plastico g 200
+Cacao amaro in polvere g 5
+Caffè g 300
+Cannella in polvere g 6
+Cedro candito g 50
+Ciliegie candite n 60
+Cioccolato fondente g 200
+Farina 0 g 500
+Farina 00 g 700
+Farina di grano duro g 500
+Farina di mais fioretto g 100
+Farina di mandorle g 200
+Farina g 260
+Farina Manitoba g 520
+Frutta candita g 100
+Gocce di cioccolato fondente g 100
+Granella di pistacchi g 750
+Grano cotto g 200
+Latte ml 500
+Latte intero ml 175
+Lievito di birra g 13
+Lievito per dolci g 10
+Mandorle g 40
+Maraschino g 30
+Marsala g 60
+Marzapane g 200
+Mascarpone g 750
+Mele Golden g 750
+Miele g 10
+Miele di castagno g 200
+Miele millefiori g 40
+Olio di semi di girasole g 60
+Olio di semi l 1
+Olio d'oliva ml 75
+Pangrattato g 60
+Panna liquida g 500
+Panna montata g 350
+Pasta di pistacchi g 20
+Pecorino g 500
+Pinoli g 50
+Pinoli tostati g 25
+Ricotta di pecora g 1200
+Rum cucchiai 2
+Sale g 10
+Savoiardi g 250
+Scorza d'arancia n 1
+Scorza di limone n 1
+Strutto g 70
+Uova n 11
+Uvetta g 90
+Vaniglia aroma n 1
+Zucchero g 350
+Zucchero a velo vanigliato g 150
+Zucchero a velo g 750
+
+
+
+
+
+
