@@ -170,7 +170,7 @@ int main()
 			consumi[61] = 200; //Zucchero a velo g 1000
 			break;
 		case 5:
-			consumi[] = ; //
+			//consumi[] = ; //
 			break;
 		default:
 			//
