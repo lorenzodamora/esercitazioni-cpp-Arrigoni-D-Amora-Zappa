@@ -1,9 +1,0 @@
-Mancano degli ingredienti! Questa è la lista della spesa
-ingrediente 1 g 2000
-ingrediente 2 g 1000
-ingrediente 3 g 2000
-ingrediente 4 g 1000
-ingrediente 5 g 2000
-ingrediente 6 g 1000
-ingrediente 7 g 2000
-ingrediente 8 g 1000
