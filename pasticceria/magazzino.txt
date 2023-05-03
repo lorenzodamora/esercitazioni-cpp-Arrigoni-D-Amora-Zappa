@@ -1,62 +1,62 @@
-questo è l'attuale magazzino della pasticceria
-Aceto di vino bianco ml 500
-Acqua ml 1000
-Acqua di fiori d'arancio ml 100
-Amarene sciroppate n 40
-Arancia candita g 100
-Baccello di vaniglia n 5
+questo e' l'attuale magazzino della pasticceria
+Aceto di vino bianco ml 950
+Acqua ml 1300
+Acqua di fiori d'arancio ml 110
+Amarene sciroppate n 75
+Arancia candita g 0
+Baccello di vaniglia n 9
 Burro g 400
 Burro morbido ma ancora plastico g 400
-Cacao amaro in polvere g 75
-Caffè g 500
-Cannella in polvere g 10
-Cedro candito g 70
+Cacao amaro in polvere g 80
+Caff� g 900
+Cannella in polvere g 14
+Cedro candito g 110
 Ciliegie candite n 100
 Cioccolato fondente g 400
-Farina 0 g 1000
-Farina 00 g 1000
+Farina 0 g 1500
+Farina 00 g 1040
 Farina di grano duro g 1000
-Farina di mais fioretto g 1000
-Farina di mandorle g 1000
-Farina g 1000
+Farina di mais fioretto g 1800
+Farina di mandorle g 1600
+Farina g 1700
 Farina Manitoba g 1000
-Frutta candita g 150
-Gocce di cioccolato fondente g 250
+Frutta candita g 250
+Gocce di cioccolato fondente g 400
 Granella di pistacchi g 1000
-Grano cotto g 500
-Latte ml 1000
-Latte intero ml 1000
-Lievito di birra g 20
+Grano cotto g 600
+Latte ml 1500
+Latte intero ml 1195
+Lievito di birra g 21
 Lievito per dolci g 20
-Mandorle g 100
-Maraschino g 100
+Mandorle g 120
+Maraschino g 110
 Marsala ml 100
-Marzapane g 500
-Mascarpone g 1000
-Mele Golden g 1000
-Miele g 100
-Miele di castagno g 300
-Miele millefiori g 100
-Olio di semi di girasole g 1000
-Olio di semi l 1
-Olio d'oliva ml 500
-Pangrattato g 100
-Panna liquida g 600
+Marzapane g 600
+Mascarpone g 1500
+Mele Golden g 1500
+Miele g 170
+Miele di castagno g 500
+Miele millefiori g 120
+Olio di semi di girasole g 1982
+Olio di semi l 0
+Olio d'oliva ml 775
+Pangrattato g 180
+Panna liquida g 765
 Panna montata g 500
-Pasta di pistacchi g 100
+Pasta di pistacchi g 160
 Pecorino g 1000
-Pinoli g 100
-Pinoli tostati g 100
-Ricotta di pecora g 2000
-Rum cucchiai 10
-Sale g 100
+Pinoli g 150
+Pinoli tostati g 150
+Ricotta di pecora g 2200
+Rum cucchiai 16
+Sale g 135
 Savoiardi g 500
-Scorza d'arancia n 10
-Scorza di limone n 10
-Strutto g 200
+Scorza d'arancia n 15
+Scorza di limone n 12
+Strutto g 210
 Uova n 12
-Uvetta g 150
+Uvetta g 230
 Vaniglia aroma n 10
-Zucchero g 1000
-Zucchero a velo vanigliato g 1000
-Zucchero a velo g 1000
+Zucchero g 1805
+Zucchero a velo vanigliato g 1700
+Zucchero a velo g 1530
