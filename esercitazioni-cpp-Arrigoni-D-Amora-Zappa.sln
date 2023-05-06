@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "es1 cpp", "es1 cpp\es1 cpp.vcxproj", "{8DC1A740-E453-431D-BA3D-877080CC7BE5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "Elementi di soluzione", "{82F0F0CF-7938-4547-B63F-AC9DC077D5BE}"
+	ProjectSection(SolutionItems) = preProject
+		pasticceria html\HomePage.html = pasticceria html\HomePage.html
+		pasticceria html\HTMLPage2.html = pasticceria html\HTMLPage2.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

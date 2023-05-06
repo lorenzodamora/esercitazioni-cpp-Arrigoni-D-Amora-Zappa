@@ -1,62 +1,62 @@
 questo e' l'attuale magazzino della pasticceria
 Aceto di vino bianco ml 950
-Acqua ml 1300
-Acqua di fiori d'arancio ml 110
-Amarene sciroppate n 75
-Arancia candita g 0
-Baccello di vaniglia n 9
-Burro g 400
+Acqua ml 1660
+Acqua di fiori d'arancio ml 165
+Amarene sciroppate n 45
+Arancia candita g 100
+Baccello di vaniglia n 3
+Burro g 225
 Burro morbido ma ancora plastico g 400
 Cacao amaro in polvere g 80
 Caffè g 900
 Cannella in polvere g 14
-Cedro candito g 110
+Cedro candito g 130
 Ciliegie candite n 100
 Cioccolato fondente g 400
 Farina 0 g 1500
-Farina 00 g 1040
+Farina 00 g 990
 Farina di grano duro g 1000
-Farina di mais fioretto g 1800
-Farina di mandorle g 1600
+Farina di mais fioretto g 1600
+Farina di mandorle g 1200
 Farina g 1700
 Farina Manitoba g 1000
 Frutta candita g 250
 Gocce di cioccolato fondente g 400
 Granella di pistacchi g 1000
-Grano cotto g 600
-Latte ml 1500
-Latte intero ml 1195
+Grano cotto g 900
+Latte ml 500
+Latte intero ml 1055
 Lievito di birra g 21
 Lievito per dolci g 20
-Mandorle g 120
-Maraschino g 110
+Mandorle g 140
+Maraschino g 150
 Marsala ml 100
 Marzapane g 600
 Mascarpone g 1500
 Mele Golden g 1500
 Miele g 170
-Miele di castagno g 500
-Miele millefiori g 120
+Miele di castagno g 400
+Miele millefiori g 180
 Olio di semi di girasole g 1982
-Olio di semi l 0
+Olio di semi l 1
 Olio d'oliva ml 775
 Pangrattato g 180
-Panna liquida g 765
+Panna liquida g 675
 Panna montata g 500
 Pasta di pistacchi g 160
 Pecorino g 1000
 Pinoli g 150
 Pinoli tostati g 150
-Ricotta di pecora g 2200
+Ricotta di pecora g 2000
 Rum cucchiai 16
-Sale g 135
+Sale g 130
 Savoiardi g 500
-Scorza d'arancia n 15
-Scorza di limone n 12
-Strutto g 210
-Uova n 12
+Scorza d'arancia n 14
+Scorza di limone n 19
+Strutto g 220
+Uova n 4
 Uvetta g 230
 Vaniglia aroma n 10
-Zucchero g 1805
+Zucchero g 1145
 Zucchero a velo vanigliato g 1700
-Zucchero a velo g 1530
+Zucchero a velo g 1100

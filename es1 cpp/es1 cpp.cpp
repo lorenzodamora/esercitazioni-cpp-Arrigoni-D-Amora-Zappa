@@ -8,7 +8,7 @@
 //#include <cstdlib>
 #include <stdbool.h>
 #include <conio.h> // _getch();
-#include <windows.h> //console color 
+#include <Windows.h> //console color 
 //#include <limits>
 
 using namespace std;
@@ -42,6 +42,33 @@ int main()
 	//cout << path << endl;
 	path = path.erase(path.length() - 7) + "pasticceria"; // es1 cpp 7 char
 	//cout << path << endl;
+
+#pragma region ApriIlBrowser
+	// String to convert
+	string test1 = path + " html\\HomePage.html";
+	const char* test = test1.c_str();
+	
+	// Calculate the length of the resulting wide string
+	int wideLen = MultiByteToWideChar(CP_UTF8, 0, test, -1, NULL, 0);
+
+	// Allocate memory for the wide string
+	wchar_t* wideStr = new wchar_t[wideLen];
+
+	// Convert the string from multibyte to wide
+	MultiByteToWideChar(CP_UTF8, 0, test, -1, wideStr, wideLen);
+
+	// Use the wide string
+	LPCWSTR testpath = wideStr;
+	//LPCWSTR testpath1 = L"C:\\Users\\ldamo\\OneDrive\\Desktop\\esercitazioni-cpp-Arrigoni-D-Amora-Zappa\\pasticceria html\\HomePage.html";
+
+	// Deallocate memory
+	//delete[] wideStr;
+
+	//open browser
+	ShellExecute(NULL, L"open", testpath, NULL, NULL, SW_SHOWNORMAL);
+	DWORD testt = GetLastError();
+#pragma endregion
+
 	cout << "metti schermo intero e premi qualunque tasto per continuare...";
 	_getch(); // Console readkey true
 	HANDLE console; //#include <windows.h>
@@ -832,7 +859,7 @@ int main()
 
 		system("CLS"); // pulisce la console
 		fill_n(lines, 100, ""); //svuota l'array
-		if (lista[0] == true)
+		if (lista[0])
 		{
 			ifstream ifspe(path + "\\spesa.txt"); // ifstream spesa; apertura file in lettura
 			getline(ifspe, lines[0]);
