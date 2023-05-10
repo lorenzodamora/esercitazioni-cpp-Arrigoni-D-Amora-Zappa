@@ -30,7 +30,7 @@ std::string get_current_dir()
 #pragma endregion
 
 #pragma region prototipi
-
+void htmlricette(string path,int ric);
 #pragma endregion
 
 int main()
@@ -47,7 +47,7 @@ int main()
 	// String to convert
 	string test1 = path + " html\\HomePage.html";
 	const char* test = test1.c_str();
-	
+
 	// Calculate the length of the resulting wide string
 	int wideLen = MultiByteToWideChar(CP_UTF8, 0, test, -1, NULL, 0);
 
@@ -130,6 +130,8 @@ int main()
 		} while (!input);
 #pragma endregion
 
+		//stampa le ricette in html
+		htmlricette(path,ric);
 		//consumi
 
 		int consumi[100] = { 0 };
@@ -158,7 +160,7 @@ int main()
 			consumi[16] = 300;// Farina 00 g 1000
 			consumi[22] = 100;//Frutta candita g 150
 			consumi[23] = 100; //Gocce di cioccolato fondente g 250
-			consumi[31]= 15;//Maraschino g 100
+			consumi[31] = 15;//Maraschino g 100
 			consumi[33] = 200;//Marzapane g 500
 			consumi[45] = 20;//Pasta di pistacchi g 100
 			consumi[49] = 1200; //Ricotta di pecora g 2000
@@ -854,7 +856,7 @@ int main()
 
 		for (int i = 1; i < 100; i++)
 			lista[0] |= lista[i];
-		
+
 		//spesa
 
 		system("CLS"); // pulisce la console
@@ -893,4 +895,19 @@ int main()
 		_getch();
 
 	} while (!end);
+}
+void htmlricette(string path, int ric[])
+{
+	string lines[1000];
+	ifstream ifhtml(path + "..\\pasticceria html\\Ricette.html"); // ifstream html; apertura file in lettura
+	for (int i = 0; getline(ifhtml, lines[i]); i++)
+		lines[i] += "\n";
+	ifhtml.close();
+
+	int riclength = sizeof(ric) / sizeof(int);
+
+
+	ofstream ofhtml(path + "..\\pasticceria html\\Ricette.html"); // ofstream html; apertura file in scrittura
+
+	ofhtml.close();
 }
