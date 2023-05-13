@@ -30,7 +30,7 @@ std::string get_current_dir()
 #pragma endregion
 
 #pragma region prototipi
-void htmlricette(string path,int ric);
+void htmlricette(string path, int* ric, int len);
 #pragma endregion
 
 int main()
@@ -130,8 +130,9 @@ int main()
 		} while (!input);
 #pragma endregion
 
+		int ri[] = { 1, 1, 2, 2, 3 };
 		//stampa le ricette in html
-		htmlricette(path,ric);
+		htmlricette(path, ri, 5);
 		//consumi
 
 		int consumi[100] = { 0 };
@@ -896,18 +897,31 @@ int main()
 
 	} while (!end);
 }
-void htmlricette(string path, int ric[])
+void htmlricette(string path, int* ric, int len)
 {
-	string lines[1000];
-	ifstream ifhtml(path + "..\\pasticceria html\\Ricette.html"); // ifstream html; apertura file in lettura
-	for (int i = 0; getline(ifhtml, lines[i]); i++)
+	string lines[139];
+	ifstream ifhtml(path + " html\\Ricette.html"); // ifstream html; apertura file in lettura
+	for (int i = 0; i < 139; i++)
+	{
+		getline(ifhtml, lines[i]);
 		lines[i] += "\n";
+	}
 	ifhtml.close();
 
-	int riclength = sizeof(ric) / sizeof(int);
+	ofstream ofhtml(path + " html\\Ricette.html"); // ofstream html; apertura file in scrittura
+	for (int i = 0; i < 139; i++)
+		ofhtml << lines[i];
 
-
-	ofstream ofhtml(path + "..\\pasticceria html\\Ricette.html"); // ofstream html; apertura file in scrittura
-
+	for (int i = 0; i < len; i++)
+	{
+		ofhtml << "\t<p id = \"ricettetesto\">\n";
+		string line = path + "\\libro delle ricette\\ricetta" + to_string(ric[i]) + ".txt";
+		ifstream ifric(line); // ifstream ricette; apertura file in lettura
+		while (getline(ifric, line))
+			ofhtml << line << endl;
+		ifric.close();
+		ofhtml << "\t</p>\n\n";
+	}
+	ofhtml << "</body>\n</html>";
 	ofhtml.close();
 }
