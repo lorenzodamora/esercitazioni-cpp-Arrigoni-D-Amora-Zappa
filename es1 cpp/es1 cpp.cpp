@@ -30,7 +30,8 @@ std::string get_current_dir()
 #pragma endregion
 
 #pragma region prototipi
-void htmlricette(string path, int* ric, int len);
+void htmlricette(string path, int* ric, int len, int tot);
+void htmldispensa(string path);
 #pragma endregion
 
 int main()
@@ -58,15 +59,14 @@ int main()
 	MultiByteToWideChar(CP_UTF8, 0, test, -1, wideStr, wideLen);
 
 	// Use the wide string
-	LPCWSTR testpath = wideStr;
+	LPCWSTR bpath = wideStr;
 	//LPCWSTR testpath1 = L"C:\\Users\\ldamo\\OneDrive\\Desktop\\esercitazioni-cpp-Arrigoni-D-Amora-Zappa\\pasticceria html\\HomePage.html";
 
 	// Deallocate memory
 	//delete[] wideStr;
 
 	//open browser
-	ShellExecute(NULL, L"open", testpath, NULL, NULL, SW_SHOWNORMAL);
-	DWORD testt = GetLastError();
+	ShellExecute(NULL, L"open", bpath, NULL, NULL, SW_SHOWNORMAL);
 #pragma endregion
 
 	cout << "metti schermo intero e premi qualunque tasto per continuare...";
@@ -92,6 +92,7 @@ int main()
 		cout << "9. tiramisu\n";
 		cout << "10. torta sbrisolona\n\n\n";
 
+		int totric = 10;
 		cout << "Scegli il dolce: ";
 #pragma endregion
 
@@ -132,7 +133,7 @@ int main()
 
 		int ri[] = { 1, 1, 2, 2, 3 };
 		//stampa le ricette in html
-		htmlricette(path, ri, 5);
+		htmlricette(path, ri, 5, totric);
 		//consumi
 
 		int consumi[100] = { 0 };
@@ -283,6 +284,8 @@ int main()
 		system("CLS"); // pulisce la console
 		bool lista[100] = { false };
 		string lines[100];
+
+		htmldispensa(path);
 
 		ifstream ifmag(path + "\\magazzino.txt"); // ifstream magazzino; apertura file in lettura
 		for (int i = 0; getline(ifmag, lines[i]); i++)
@@ -853,6 +856,8 @@ int main()
 				ofmag << lin;
 		ofmag.close();
 
+
+
 		_getch();
 
 		for (int i = 1; i < 100; i++)
@@ -897,7 +902,7 @@ int main()
 
 	} while (!end);
 }
-void htmlricette(string path, int* ric, int len)
+void htmlricette(string path, int* ric, int len, int tot)
 {
 	string lines[139];
 	ifstream ifhtml(path + " html\\Ricette.html"); // ifstream html; apertura file in lettura
@@ -912,16 +917,46 @@ void htmlricette(string path, int* ric, int len)
 	for (int i = 0; i < 139; i++)
 		ofhtml << lines[i];
 
-	for (int i = 0; i < len; i++)
+	for (int i = 1; i <= tot; i++)
 	{
-		ofhtml << "\t<p id = \"ricettetesto\">\n";
-		string line = path + "\\libro delle ricette\\ricetta" + to_string(ric[i]) + ".txt";
-		ifstream ifric(line); // ifstream ricette; apertura file in lettura
-		while (getline(ifric, line))
-			ofhtml << line << endl;
-		ifric.close();
-		ofhtml << "\t</p>\n\n";
+		for (int j = 0; j < len; j++)
+			if (ric[j] == i)
+			{
+				ofhtml << "\t<p id = \"ricettetesto\">\n";
+				string line = path + "\\libro delle ricette\\ricetta" + to_string(ric[j]) + ".txt";
+				ifstream ifric(line); // ifstream ricette; apertura file in lettura
+				while (getline(ifric, line))
+					ofhtml << line << endl;
+				ifric.close();
+				ofhtml << "\t</p>\n";
+				break;
+			}
 	}
 	ofhtml << "</body>\n</html>";
+	ofhtml.close();
+}
+
+void htmldispensa(string path)
+{
+	string lines[139];
+	ifstream ifhtml(path + " html\\Dispensa.html"); // ifstream html; apertura file in lettura
+	for (int i = 0; i < 139; i++)
+	{
+		getline(ifhtml, lines[i]);
+		lines[i] += "\n";
+	}
+	ifhtml.close();
+
+	ofstream ofhtml(path + " html\\Dispensa.html"); // ofstream html; apertura file in scrittura
+	for (int i = 0; i < 139; i++)
+		ofhtml << lines[i];
+
+	ofhtml << "\t<p id = \"listadispensa\">\n";
+	string line = path + "\\magazzino.txt";
+	ifstream ifmag(line); // ifstream magazzino; apertura file in lettura
+	while (getline(ifmag, line))
+		ofhtml << line << endl;
+	ifmag.close();
+	ofhtml << "\t</p>\n</body>\n</html>";
 	ofhtml.close();
 }
