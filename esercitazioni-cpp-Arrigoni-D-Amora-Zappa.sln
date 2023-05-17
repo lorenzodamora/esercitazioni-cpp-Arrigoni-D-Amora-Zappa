@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "El
 	ProjectSection(SolutionItems) = preProject
 		pasticceria html\Dispensa.html = pasticceria html\Dispensa.html
 		pasticceria html\HomePage.html = pasticceria html\HomePage.html
+		pasticceria html\Ordinazioni.html = pasticceria html\Ordinazioni.html
 		pasticceria html\Ricette.html = pasticceria html\Ricette.html
+		pasticceria html\Spesa.html = pasticceria html\Spesa.html
 	EndProjectSection
 EndProject
 Global

@@ -32,6 +32,8 @@ std::string get_current_dir()
 #pragma region prototipi
 void htmlricette(string path, int* ric, int len, int tot);
 void htmldispensa(string path);
+void htmlspesa(string path, bool* lista, int len);
+void htmlspesa(string path);
 #pragma endregion
 
 int main()
@@ -46,27 +48,25 @@ int main()
 
 #pragma region ApriIlBrowser
 	// String to convert
-	string test1 = path + " html\\HomePage.html";
-	const char* test = test1.c_str();
+	string spath = path + " html\\HomePage.html";
 
 	// Calculate the length of the resulting wide string
-	int wideLen = MultiByteToWideChar(CP_UTF8, 0, test, -1, NULL, 0);
+	int wideLen = MultiByteToWideChar(CP_UTF8, 0, spath.c_str(), -1, NULL, 0);
 
 	// Allocate memory for the wide string
 	wchar_t* wideStr = new wchar_t[wideLen];
 
 	// Convert the string from multibyte to wide
-	MultiByteToWideChar(CP_UTF8, 0, test, -1, wideStr, wideLen);
+	MultiByteToWideChar(CP_UTF8, 0, spath.c_str(), -1, wideStr, wideLen);
 
 	// Use the wide string
-	LPCWSTR bpath = wideStr;
-	//LPCWSTR testpath1 = L"C:\\Users\\ldamo\\OneDrive\\Desktop\\esercitazioni-cpp-Arrigoni-D-Amora-Zappa\\pasticceria html\\HomePage.html";
-
+	LPCWSTR wpath = wideStr;
+	
 	// Deallocate memory
 	//delete[] wideStr;
 
 	//open browser
-	ShellExecute(NULL, L"open", bpath, NULL, NULL, SW_SHOWNORMAL);
+	ShellExecuteW(NULL, L"open", wpath, NULL, NULL, SW_SHOWNORMAL);
 #pragma endregion
 
 	cout << "metti schermo intero e premi qualunque tasto per continuare...";
@@ -134,6 +134,7 @@ int main()
 		int ri[] = { 1, 1, 2, 2, 3 };
 		//stampa le ricette in html
 		htmlricette(path, ri, 5, totric);
+
 		//consumi
 
 		int consumi[100] = { 0 };
@@ -157,7 +158,7 @@ int main()
 			break;
 
 		case 2:
-			consumi[3] = 150; //Acqua ml 1000
+			consumi[2] = 150; //Acqua ml 1000
 			consumi[5] = 50; //Arancia candita g 100
 			consumi[16] = 300;// Farina 00 g 1000
 			consumi[22] = 100;//Frutta candita g 150
@@ -175,7 +176,7 @@ int main()
 			break;
 
 		case 3:
-			consumi[3] = 100; //Acqua ml 1000
+			consumi[2] = 100; //Acqua ml 1000
 			consumi[6] = 1; //Baccello di vaniglia n 5
 			consumi[15] = 500; //Farina 0 g 1000
 			consumi[27] = 175; //Latte intero ml 1000
@@ -284,8 +285,6 @@ int main()
 		system("CLS"); // pulisce la console
 		bool lista[100] = { false };
 		string lines[100];
-
-		htmldispensa(path);
 
 		ifstream ifmag(path + "\\magazzino.txt"); // ifstream magazzino; apertura file in lettura
 		for (int i = 0; getline(ifmag, lines[i]); i++)
@@ -856,8 +855,6 @@ int main()
 				ofmag << lin;
 		ofmag.close();
 
-
-
 		_getch();
 
 		for (int i = 1; i < 100; i++)
@@ -876,11 +873,14 @@ int main()
 				if (lista[i] == true)
 					cout << lines[i] << endl;
 			ifspe.close();
-
+			htmlspesa(path, lista, 100);
 			cout << "\n\nIngredienti aggiunti al magazzino!";
 		}
 		else
+		{
+			htmlspesa(path);
 			cout << "Non mancano ingredienti in magazzino!";
+		}
 
 		_getch();
 
@@ -898,6 +898,8 @@ int main()
 
 		cout << "\n\nGli ingredienti usati sono stati rimossi dal magazzino!";
 
+		htmldispensa(path);
+
 		_getch();
 
 	} while (!end);
@@ -905,17 +907,26 @@ int main()
 void htmlricette(string path, int* ric, int len, int tot)
 {
 	string lines[139];
+	string lines2[139];
 	ifstream ifhtml(path + " html\\Ricette.html"); // ifstream html; apertura file in lettura
+	ifstream ifhtml2(path + " html\\Ordinazioni.html"); // ifstream html2; apertura file in lettura
 	for (int i = 0; i < 139; i++)
 	{
 		getline(ifhtml, lines[i]);
 		lines[i] += "\n";
+		getline(ifhtml2, lines2[i]);
+		lines2[i] += "\n";
 	}
 	ifhtml.close();
+	ifhtml2.close();
 
 	ofstream ofhtml(path + " html\\Ricette.html"); // ofstream html; apertura file in scrittura
+	ofstream ofhtml2(path + " html\\Ordinazioni.html"); // ofstream html2; apertura file in scrittura
 	for (int i = 0; i < 139; i++)
+	{
 		ofhtml << lines[i];
+		ofhtml2 << lines2[i];
+	}
 
 	for (int i = 1; i <= tot; i++)
 	{
@@ -929,11 +940,18 @@ void htmlricette(string path, int* ric, int len, int tot)
 					ofhtml << line << endl;
 				ifric.close();
 				ofhtml << "\t</p>\n";
+
+				ofhtml2 << "\t<p id = \"listaordinazioni\">\n";
+				/*img*/
+				ofhtml2 << "\t</p>\n";
 				break;
 			}
 	}
+
 	ofhtml << "</body>\n</html>";
+	ofhtml2 << "</body>\n</html>";
 	ofhtml.close();
+	ofhtml2.close();
 }
 
 void htmldispensa(string path)
@@ -958,5 +976,54 @@ void htmldispensa(string path)
 		ofhtml << line << endl;
 	ifmag.close();
 	ofhtml << "\t</p>\n</body>\n</html>";
+	ofhtml.close();
+}
+
+void htmlspesa(string path, bool* lista, int len)
+{
+	string lines[139];
+	ifstream ifhtml(path + " html\\Spesa.html"); // ifstream html; apertura file in lettura
+	for (int i = 0; i < 139; i++)
+	{
+		getline(ifhtml, lines[i]);
+		lines[i] += "\n";
+	}
+	ifhtml.close();
+
+	ofstream ofhtml(path + " html\\Spesa.html"); // ofstream html; apertura file in scrittura
+	for (int i = 0; i < 139; i++)
+		ofhtml << lines[i];
+
+	ofhtml << "\t<p id = \"listaspesa\">\n";
+	string line = path + "\\spesa.txt";
+	ifstream ifspe(line); // ifstream spesa; apertura file in lettura
+	getline(ifspe, line);
+	ofhtml << line << endl;//line 0
+	for(int i = 1; getline(ifspe, line); i++)
+		if (lista[i] == true)
+			ofhtml << line << endl;
+	ifspe.close();
+
+	ofhtml << "\t</p>\n</body>\n</html>";
+	ofhtml.close();
+}
+
+void htmlspesa(string path)
+{
+	string lines[139];
+	ifstream ifhtml(path + " html\\Spesa.html"); // ifstream html; apertura file in lettura
+	for (int i = 0; i < 139; i++)
+	{
+		getline(ifhtml, lines[i]);
+		lines[i] += "\n";
+	}
+	ifhtml.close();
+
+	string line;
+	ofstream ofhtml(path + " html\\Spesa.html"); // ofstream html; apertura file in scrittura
+	for (int i = 0; i < 139; i++)
+		ofhtml << lines[i];
+
+	ofhtml << "\t<p id = \"listaspesa\">\nNon mancano ingredienti in magazzino!\n\t</p>\n</body>\n</html>";
 	ofhtml.close();
 }
