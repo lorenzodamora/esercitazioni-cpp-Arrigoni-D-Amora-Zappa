@@ -940,14 +940,18 @@ void htmlricette(string path, int* ric, int len, int tot)
 					ofhtml << line << endl;
 				ifric.close();
 				ofhtml << "\t</p>\n";
-
-				ofhtml2 << "\t<p id = \"listaordinazioni\">\n";
-				/*img*/
-				ofhtml2 << "\t</p>\n";
 				break;
 			}
 	}
-
+	for (int j = 0; j < len; j++)
+	{
+		string line = path + "\\libro delle ricette\\ricetta" + to_string(ric[j]) + ".txt";
+		ifstream ifric(line); // ifstream ricette; apertura file in lettura
+		getline(ifric, line);
+		ifric.close();
+		ofhtml2 << "\t<p id = \"listaordinazioni\">\n" << line << "\n\t</p>\n";
+		ofhtml2 << "\t<img src=\"immagini\\dolce" + to_string(ric[j]) + ".jpg\" />\n";
+	}
 	ofhtml << "</body>\n</html>";
 	ofhtml2 << "</body>\n</html>";
 	ofhtml.close();
