@@ -1,22 +1,19 @@
+//programma di c++ e html che supporta la pasticcieria da Ciccio
 #pragma region include
 
 #include <iostream>
 #include <fstream>
 #include <string> //ha getline()
-//#include <stdio.h>//ha printf()
-//#include <stdlib.h>
-//#include <cstdlib>
 #include <stdbool.h>
 #include <conio.h> // _getch();
-#include <Windows.h> //console color 
-//#include <limits>
+#include <Windows.h> //console color
 
 using namespace std;
 
 #pragma endregion
 
+//funzione che ritorna il percorso di lavoro del programma
 #pragma region Path
-
 #include <direct.h>
 #define GetCurrentDir _getcwd
 
@@ -39,39 +36,31 @@ void htmlspesa(string path);
 int main()
 {
 	//SetConsoleOutputCP(GetACP()); // GetACP() returns the system codepage.
-	SetConsoleOutputCP(CP_UTF8); //codifica utf per la console
+	SetConsoleOutputCP(CP_UTF8); //codifica utf per la console, permette l'uso di u8"" nei cout
 
+	//assegnamento e configurazione percorso
 	string path = get_current_dir();
-	//cout << path << endl;
-	path = path.erase(path.length() - 7) + "pasticceria"; // es1 cpp 7 char
-	//cout << path << endl;
+	path = path.erase(path.length() - 7) + "pasticceria"; // "es1 cpp" : 7 char
 
 #pragma region ApriIlBrowser
-	// String to convert
-	string spath = path + " html\\HomePage.html";
+	//conversioni che trasformano il percorso in widechar per passarlo alla funzione, codice copiato da internet e non approfondito
 
-	// Calculate the length of the resulting wide string
-	int wideLen = MultiByteToWideChar(CP_UTF8, 0, spath.c_str(), -1, NULL, 0);
+	string spath = path + " html\\HomePage.html";		//String to convert
 
-	// Allocate memory for the wide string
-	wchar_t* wideStr = new wchar_t[wideLen];
+	int wideLen = MultiByteToWideChar(CP_UTF8, 0, spath.c_str(), -1, NULL, 0); 	// Calculate the length of the resulting wide string
 
-	// Convert the string from multibyte to wide
-	MultiByteToWideChar(CP_UTF8, 0, spath.c_str(), -1, wideStr, wideLen);
+	wchar_t* wideStr = new wchar_t[wideLen]; 	// Allocate memory for the wide string
 
-	// Use the wide string
-	LPCWSTR wpath = wideStr;
+	MultiByteToWideChar(CP_UTF8, 0, spath.c_str(), -1, wideStr, wideLen); // Convert the string from multibyte to wide
 
-	// Deallocate memory
-	//delete[] wideStr;
+	LPCWSTR wpath = wideStr; 	// Use the wide string
 
-	//open browser
-	//ShellExecuteW(NULL, L"open", wpath, NULL, NULL, SW_SHOWNORMAL);
+	ShellExecuteW(NULL, L"open", wpath, NULL, NULL, SW_SHOWNORMAL); 	//open browser
 #pragma endregion
-
+	//prestart del programma, con ricolorazione del prompt
 	cout << u8"metti schermo intero e premi qualunque tasto per continuare...";
 	_getch(); // Console readkey true
-	HANDLE console; //#include <windows.h>
+	HANDLE console;
 	console = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(console, 240); //nero su bianco
 
@@ -96,51 +85,60 @@ int main()
 		cout << u8"Scegli i dolci: ";
 #pragma endregion
 
+#pragma region input
+		/*
+		* fa in modo che si possano fare più ordinazioni, al massimo 10
+		* è presente la gestione degli errori in input con l'utilizzo di try catch
+		* 
+		*/
 		int ric[10] = { 0 };
 		int len = 0;
 		bool checkInput;
 		bool stopInput = false;
-#pragma region input
 		while (!stopInput && len != 10)
 		{
 			do
 			{
 				try
 				{
-					checkInput = true;
+					checkInput = true; //true : non ci sono errori
 					string sric;
-					getline(cin, sric);
-					//cin.ignore(INT_MAX, '\n'); // quando c'era cin >> sric   senza cin.ignore, se scrivesse a a a attiverebbe 3 volte il catch
-					//cin.ignore(INT_MAX, ' '); //test
-					if (sric == "c") return 0;
-					if (sric == "0")
-						if (len != 0)
+					getline(cin, sric); //input fino a /n
+					if (sric == "c") return 0; //se chiude la console basta chiudere main
+					if (sric == "0") //fine delle ordinazioni
+						if (len != 0) //almeno una ordinazione
 						{
-							len--;
-							stopInput = true;
-							break;
+							len--; //a ogni ciclo fa len++, serve per il conteggio corretto
+							stopInput = true; //chiuderà i cicli di input
+							break; //chiude il while dove si trova il try catch
 						}
-					ric[len] = stoi(sric); // se scrivo "1 a" o "1a"  mi prende 1
-					if (ric[len] < 1 || ric[len] > 10 || to_string(ric[len]) != sric)
-						throw "";
-					//throw sric;
-				} //catch (string sric) da errore
+					ric[len] = stoi(sric); // stoi converte da stringa a intero //errore di stoi() : se scrivo "1 a" o "1a"  ric diventerà comunque 1
+					if (ric[len] < 1 || ric[len] > 10 || to_string(ric[len]) != sric) //controlla se l'input è dentro i limiti, e gestisce l'errore di stoi
+						throw ""; //passa a catch
+				} // throw sric; catch (string sric) da errore
 				catch (...)
-				{ // 17 | 12
-					//console = GetStdHandle(STD_OUTPUT_HANDLE);
-					//COORD pos = { 17 , 15 };
+				{
+					/*
+					* setta la posizione del cursore alle coordinate giuste
+					* ci stampa le condizioni per evitare gli errori
+					* pulisce l'input dell'utente e setta che va ripetuto l'input
+					*/
 					SetConsoleCursorPosition(console, { 17, 18 });
 					cout << u8"scrivi un numero da 1 a 10 per scegliere un dolce (almeno uno)";
+					SetConsoleCursorPosition(console, { 17, 17 });
 					CONSOLE_SCREEN_BUFFER_INFO csbi;
 					GetConsoleScreenBufferInfo(console, &csbi);
-					SetConsoleCursorPosition(console, { 17, 17 });
 					//COORD coo = csbi.dwSize;
 					//cout << string(coo.X, ' ');
-					cout << string(csbi.dwSize.X, ' ');
+					cout << string(csbi.dwSize.X, ' '); //per pulire stampa una stringa di spazi lunga quanto la lunghezza del buffer
 					SetConsoleCursorPosition(console, { 17, 17 });
 					checkInput = false;
 				}
 			} while (!checkInput);
+			/*
+			* posiziona e stampa l'array delle ricette, incrementa len
+			* pulisce il vecchio input e posiziona
+			*/
 			SetConsoleCursorPosition(console, { 0, 19 });
 			cout << u8"ricette selezionate: ";
 			SetConsoleCursorPosition(console, { (short)(22 + len * 3), 19 });
@@ -929,6 +927,7 @@ int main()
 }
 void htmlricette(string path, int* ric, int len, int tot)
 {
+	//i nostri file html hanno gli style fino alla line 139, perciò leggerà e stamperà fino a lì
 	string lines[139];
 	string lines2[139];
 	ifstream ifhtml(path + " html\\Ricette.html"); // ifstream html; apertura file in lettura
