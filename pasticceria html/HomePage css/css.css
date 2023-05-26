@@ -1,0 +1,466 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    height: 150%;
+    width: 100%;
+    background-color: white;
+}
+
+.header {
+    background: #964b00;
+    width: 100%;
+    height: 120px;
+    margin-left: 0px;
+    margin-top: -20px;
+} 
+
+icona {
+position:relative;
+    widht:100%;
+height:100px;
+top:10px;
+}
+
+tit {
+    position: relative;
+    left: 3%;
+top: -10;
+    color: white;
+    width: 100%;
+    font-size: 300%;
+    font-family: Lucida Handwriting;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+
+dispensa {
+position:absolute;
+top:40px;
+left:850px;
+font-size:20px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+a {
+text-decoration: none; 
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #54b3d6;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+  box-shadow: inset 150px 0 0 0 #54b3d6;
+  color: white;
+}
+
+
+spesa {
+position:absolute;
+top:40px;
+left:1000px;
+font-size:20px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ordinazioni {
+position:absolute;
+top:40px;
+left:1100px;
+font-size:20px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ricette {
+position:absolute;
+top:40px;
+left:1285px;
+font-size:20px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.facebook{
+position:absolute;
+float:left;
+left:1405px;
+top:30px;
+height:50px;
+width:50px;
+}
+
+.twitter{
+position:absolute;
+left:1465px;
+height:70px;
+width:70px;
+top:30px;
+}
+
+.youtube{
+position:absolute;
+left:1525px;
+height:60px;
+width:100px;
+top:30px;
+}
+
+.instagram{
+position:absolute;
+left:1615px;
+height:60px;
+width:60px;
+top:30px;
+}
+
+.telegram{
+position:absolute;
+left:1685px;
+height:50px;
+width:50px;
+top:33px;
+}
+
+info{
+position:absolute;
+top:40px;
+left:1725px;
+font-size:20px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+t
+{
+position:absolute;
+left:1800px;
+top:5px;
+font-size:30px;
+color:white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.info
+{
+position:absolute;
+left:1810px;
+height:60px;
+width:60px;
+top:45px;
+}
+
+.supporto
+{
+position:relative;
+left:0px;
+height:650px;
+width:100%;
+}
+
+.sfondo{
+background: #964b00;
+    width: 100%;
+    height: 1500px;
+
+}
+
+titb {
+    position: relative;
+    left: 3%;
+top: 10px;
+    color: white;
+    width: 100%;
+    font-size: 300%;
+    font-family: Lucida Handwriting;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.fotoaa
+{
+position:absolute;
+left:50px;
+height:400px;
+width:23%;
+top:775px;
+margin-top: 100px;
+}
+
+.fotoab
+{
+position:absolute;
+left:50px;
+height:400px;
+width:23%;
+top:1225px;
+margin-top: 100px;
+}
+
+.fotoac
+{
+position:absolute;
+left:50px;
+height:400px;
+width:23%;
+top:1675px;
+margin-top: 100px;
+}
+
+.fotoba
+{
+position:absolute;
+left:550px;
+height:400px;
+width:600px;
+top:775px;
+margin-top: 100px;
+}
+
+.fotobb
+{
+position:absolute;
+left:550px;
+height:400px;
+width:450px;
+top:1225px;
+margin-top: 100px;
+}
+
+.fotobc
+{
+position:absolute;
+left:650px;
+height:400px;
+width:500px;
+top:1675px;
+margin-top: 100px;
+}
+
+.fotoca
+{
+position:absolute;
+left:1200px;
+height:400px;
+width:600px;
+top:775px;
+margin-top: 100px;
+}
+
+.fotocb
+{
+position:absolute;
+left:1470px;
+height:400px;
+width:400px;
+top:1225px;
+margin-top: 100px;
+}
+
+.fotocc
+{
+position:absolute;
+left:1035px;
+height:400px;
+width:400px;
+top:1225px;
+margin-top: 100px;
+}
+
+
+
+.fotoabc
+{
+position:absolute;
+left:1350px;
+height:400px;
+width:500px;
+top:1675px;
+margin-top: 100px;
+}
+
+ciaoa{
+position:absolute;
+top:1280px;
+font-size:20px;
+margin-left: -380;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ciaob{
+position:absolute;
+top:1730px;
+font-size:20px;
+margin-left: -350;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ciaoc{
+position:absolute;
+top:1730px;
+font-size:20px;
+margin-left: 1000px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ciaog{
+position:absolute;
+top:2180px;
+font-size:20px;
+margin-left: 1000px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+
+ciaoh{
+position:absolute;
+top:1285px;
+font-size:20px;
+margin-left: 800;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+
+ciaoe{
+position:absolute;
+top:1730px;
+font-size:20px;
+margin-left: 100px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ciaof{
+position:absolute;
+top:1730px;
+font-size:20px;
+margin-left: 650px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+
+ciaoi{
+position:absolute;
+top:2180px;
+font-size:20px;
+margin-left: 325px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ciaod{
+position:absolute;
+top:1280px;
+font-size:20px;
+margin-left: 190px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+ciaoj{
+position:absolute;
+top:2180px;
+font-size:20px;
+margin-left: -350px;
+font-weight: bold;
+color: white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.sfondoa{
+background: #964b00;
+    width: 100%;
+    height: 1000px;
+
+}
+
+titc {
+    position: absolute;
+    color: white;
+left: 20px;
+    width: 100%;
+    font-size: 300%;
+    font-family: Lucida Handwriting;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.sfondob{
+background: #964b00;
+    width: 1100px;
+    float: right;
+    left:1040;
+    height: 750px;
+margin: 0px;
+
+}
+
+stile{
+font-size:20px;
+color:white;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+stilea{
+font-size:20px;
+color:white;
+left: 60px;
+font-family: Lucida Handwriting;
+text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.sfondoc{
+background: #964b00;
+    width: 100%;
+    height: 705px;
+
+}
+
+tite {
+    position: absolute;
+    color: white;
+left: 1200px;
+margin-top: 300px;
+    width: 100%;
+    font-size: 300%;
+    font-family: Lucida Handwriting;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
